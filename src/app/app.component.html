@@ -1,4 +1,4 @@
-<div class="container-fluid py-3">
+<!---<div class="container-fluid py-3">
   <h1>Angular Progressive Web Application (PWA)</h1>
 
   <div class="row my-5">
@@ -10,6 +10,21 @@
       <span class="badge bg-danger" *ngIf="!isOnline">Offline</span>
     </div>
   </div>
+</div>-->
+
+<!-- removi o embedded -->
+<div>
+  <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;"
+    arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;'>
+
+    <!-- use rawgithack to retrieve the correct url for nft marker (see 'trex' below) -->
+    <a-nft type='nft' url='./pwa-with-angular/assets/trex/trex-image/trex' smooth='true' smoothCount='10'
+      smoothTolerance='0.01' smoothThreshold='5'>
+      <a-entity gltf-model='./assets/trex/scene.gltf' scale="5 5 5" position="100 100 0">
+      </a-entity>
+    </a-nft>
+    <a-entity camera></a-entity>
+  </a-scene>
 </div>
 
 <div class="w-100 position-absolute top-0" *ngIf="modalVersion">
